@@ -15,4 +15,11 @@ public class HelloController {
 		return "home";
 	}
 
+	@RequestMapping(method = RequestMethod.GET, value = "/welcome")
+	public String greetWelcome(Model model)
+	{
+		model.addAttribute("message", "Welcome Java Developers!!!");
+		return "home";
+	}
+
 }
