@@ -47,7 +47,7 @@
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="student" items="${stdlist}">
+            <c:forEach var="student" items="${studentsList}">
                 <tr>
                     <td><c:out value="${student.id}"/></td>
                     <td><c:out value="${student.name}"/></td>

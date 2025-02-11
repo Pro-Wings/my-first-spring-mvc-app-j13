@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Student Registration</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,9 +13,6 @@
             flex-direction: column;
             align-items: center;
         }
-        h1, h2 {
-            color: #333;
-        }
         .container {
             background: white;
             padding: 20px;
@@ -23,23 +20,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 50%;
             text-align: center;
-        }
-        .message {
-            color: #007bff;
-            font-weight: bold;
             margin-bottom: 20px;
         }
-        a {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        a:hover {
-            background-color: #0056b3;
+        h2 {
+            color: #333;
         }
         form {
             text-align: left;
@@ -50,7 +34,7 @@
         label {
             font-weight: bold;
         }
-        input[type="text"] {
+        input[type="text"], input[type="number"] {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
@@ -68,24 +52,24 @@
         button:hover {
             background-color: #218838;
         }
+        .update-container {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+        }
+        .update-button {
+            background-color: #007bff;
+        }
+        .update-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Student Registration Form -->
     <div class="container">
-        <h1>Spring MVC Home Page</h1>
-        
-        <p class="message">
-            Message: <c:out value="${message}" />
-        </p>
-
-        <p>
-            <a href="studentRegistration.jsp">Go to Student Registration</a>
-        </p>
-
-        <h2>Student Registration Form</h2>
-        
-        <form action="student" method="POST">
+        <h2>Student Registration</h2>
+        <form action="registerStudent" method="POST">
             <div class="form-group">
                 <label for="name">First Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -98,6 +82,31 @@
 
             <div class="form-group">
                 <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Update Student Form -->
+    <div class="container update-container">
+        <h2>Update Student</h2>
+        <form action="updateStudent" method="POST">
+            <div class="form-group">
+                <label for="id">Student ID:</label>
+                <input type="number" id="id" name="id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">New Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">New Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="update-button">Update</button>
             </div>
         </form>
     </div>
